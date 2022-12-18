@@ -1,5 +1,6 @@
 const contactsOperations = require('./contacts');
 const { Command } = require('commander');
+
 const program = new Command();
 program
   .option('-a, --action <type>', 'choose action')
@@ -43,4 +44,4 @@ const invokeAction = async ({ action, id, data }) => {
 //   phone: '(233) 70000038-2360',
 // };
 
-invokeAction({ action: 'getById', id: '1' });
+invokeAction(argv);
