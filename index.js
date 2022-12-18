@@ -13,7 +13,7 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-const invokeAction = async ({ action, id, data }) => {
+const invokeAction = async ({ action, id, name, email, phone, data }) => {
   switch (action) {
     case 'getAll':
       const contacts = await contactsOperations.listContacts();
@@ -24,7 +24,7 @@ const invokeAction = async ({ action, id, data }) => {
       console.log(contact);
       break;
     case 'add':
-      const newContact = await contactsOperations.addContact(data);
+      const newContact = await contactsOperations.addContact(name, email, phone);
       console.log(newContact);
       break;
     case 'remove':

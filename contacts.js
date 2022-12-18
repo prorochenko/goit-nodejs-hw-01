@@ -30,7 +30,7 @@ async function removeContact(contactId) {
   return removeContact;
 }
 
-async function addContact({ name, email, phone }) {
+async function addContact(name, email, phone) {
   const allContacts = await listContacts();
   const contact = {
     id: uuid(),
